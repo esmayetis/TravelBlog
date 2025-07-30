@@ -1,0 +1,53 @@
+﻿@using TravelTripProje.Models.Siniflar
+@model List<Blog>
+<style>
+    .box-left .bot-img img {
+        width: 150px;
+        height: 90px;
+        object-fit: cover;
+        margin-right: 10px;
+        border-radius: 4px;
+        float: left;
+    }
+
+    .box-left .bot-desc a {
+        text-decoration: none;
+        color: black;
+        font-size: 13px;
+        line-height: 1.4;
+        display: block;
+        text-align: justify;
+    }
+
+        .box-left .bot-desc a:hover {
+            color: #888;
+        }
+
+    .box-left .bot-desc {
+        overflow: hidden;
+        max-width: 200px; /* Yazının sağa taşmasını engeller */
+        text-align: justify;
+    }
+
+    .clear {
+        clear: both;
+    }
+</style>
+
+<div class="padding1">
+    <h4>En Beğendiğim Yerler</h4>
+    <div class="box-left">
+        @foreach (var x in Model)
+        {
+            <div class="bot-img">
+                <img src="@x.BlogImage" alt="" />
+            </div>
+            <div class="bot-desc">
+                <a href="/Blog/BlogDetay/@x.Id">@x.Aciklama.Substring(0, 120)...</a>
+
+            </div>
+            <div class="clear"></div>
+        }
+    </div>
+    @Html.Action("Partial5", "Default")
+</div>

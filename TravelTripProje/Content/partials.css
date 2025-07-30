@@ -1,0 +1,34 @@
+﻿/* SADECE .partial-style sınıfı içine yazılmış alanlarda geçerli olur */
+.partial-style .bot-img img {
+    width: 100px;
+    height: 70px;
+    object-fit: cover;
+    margin-right: 10px;
+    border-radius: 4px;
+    float: left;
+}
+
+.partial-style .bot-desc a {
+    text-decoration: none;
+    color: black;
+    font-size: 13px;
+    line-height: 1.2;
+    display: block;
+}
+
+    .partial-style .bot-desc a:hover {
+        color: #888;
+    }
+
+.partial-style .bot-desc {
+    overflow: hidden;
+    padding-top: 5px;
+}
+
+.partial-style .blog-item {
+    margin-bottom: 15px;
+}
+
+.partial-style .clear {
+    clear: both;
+}

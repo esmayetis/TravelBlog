@@ -1,0 +1,54 @@
+﻿@using TravelTripProje.Models.Siniflar
+@model List<Blog>
+
+<style>
+    .box1-left .blog-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 15px;
+    }
+    .box1-left .bot-img img {
+        width: 150px;
+        height: 90px;
+        object-fit: cover;
+        margin-right: 10px;
+        border-radius: 4px;
+        float: left;
+    }
+
+    .box1-left .bot-desc1 a {
+        text-decoration: none;
+        color: black;
+        font-size: 13px;
+        line-height: 1.4;
+        display: block;
+        text-align: justify;
+    }
+
+        .box1-left .bot-desc1 a:hover {
+            color: rgba(164, 159, 159, 0.4); /* 0.4 = %40 opaklık */
+        }
+
+    .box1-left .bot-desc1 {
+        overflow: hidden;
+        max-width: 200px; /* Yazının sağa taşmasını engeller */
+        text-align: justify;
+    }
+
+    .clear {
+        clear: both;
+    }
+</style>
+
+<div class="box1-left">
+    @foreach (var x in Model)
+    {
+        <div class="bot-img">
+            <img src="@x.BlogImage" alt="" />
+        </div>
+        <div class="bot-desc1">
+            <a href="/Blog/BlogDetay/@x.Id">@x.Aciklama.Substring(0, 120)...</a>
+        </div>
+        <div class="clear"></div>
+    }
+</div>
