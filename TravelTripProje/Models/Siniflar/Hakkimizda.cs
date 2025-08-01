@@ -12,6 +12,9 @@ namespace TravelTripProje.Models.Siniflar
 		public int Id { get; set; }
 		public string Aciklama { get; set; }
 		public string FotoUrl { get; set; }
-	
+
+		public string Baslik { get; set; }
+
+
 	}
 }

@@ -1,63 +1,66 @@
-﻿@model List<TravelTripProje.Models.Siniflar.Hakkimizda>
+﻿@using TravelTripProje.Models.Siniflar
+@model List<Hakkimizda>
 @{
     ViewBag.Title = "Hakkımızda";
     Layout = "~/Views/Shared/_TestLayout.cshtml";
 }
 
 <style>
-    .card-container {
+    .about-cards {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         gap: 30px;
-        padding: 50px 20px;
-        max-width: 1200px;
-        margin: auto;
+        padding: 30px;
     }
 
-    .info-card {
-        width: 300px;
-        border-radius: 12px;
+    .card {
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
         overflow: hidden;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease;
-        background: #fff;
+        width: 300px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-        .info-card:hover {
-            transform: translateY(-5px);
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
 
-        .info-card img {
+        .card img {
             width: 100%;
-            height: 200px;
+            height: 180px;
             object-fit: cover;
         }
 
-    .info-card-content {
+    .card-body {
         padding: 20px;
     }
 
-        .info-card-content h3 {
-            color: #800040;
-            margin-bottom: 10px;
-        }
+    .card-title {
+        font-size: 20px;
+        font-weight: bold;
+        color: #800040;
+        margin-bottom: 10px;
+    }
 
-        .info-card-content p {
-            font-size: 14px;
-            color: #555;
-            line-height: 1.6;
-        }
+    .card-text {
+        font-size: 14px;
+        color: #333;
+        line-height: 1.5;
+    }
 </style>
 
-<div class="card-container">
-    @foreach (var item in Model)
+<div class="about-cards">
+    @foreach (var x in Model)
     {
-        <div class="info-card">
-            <img src="@item.FotoUrl" alt="Hakkımızda Kartı" />
-            <div class="info-card-content">
-              
-                <p>@item.Aciklama</p>
+        <div class="card">
+            <img src="@x.FotoUrl" alt="Görsel" />
+            <div class="card-body">
+                <div class="card-title">@x.Baslik</div>
+                <br />
+                <div class="card-text">@x.Aciklama</div>
             </div>
         </div>
     }
