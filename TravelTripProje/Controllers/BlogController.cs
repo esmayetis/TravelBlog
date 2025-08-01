@@ -18,6 +18,9 @@ namespace TravelTripProje.Controllers
             //var bloglar = c.Blogs.ToList();
             by.Deger1 = c.Blogs.ToList();
 			by.Deger3 = c.Blogs.OrderByDescending(x => x.Id).Take(5).ToList(); // guncel bloglar
+			by.Deger4 = c.Yorumlars.OrderByDescending(y => y.Id).Take(3).ToList(); // son 3 yorum
+
+
 			return View(by);
         }
 
