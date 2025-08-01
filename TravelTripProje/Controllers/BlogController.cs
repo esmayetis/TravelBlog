@@ -17,7 +17,7 @@ namespace TravelTripProje.Controllers
         {
             //var bloglar = c.Blogs.ToList();
             by.Deger1 = c.Blogs.ToList();
-			by.Deger3 = c.Blogs.OrderByDescending(x => x.Id).Take(3).ToList(); // guncel bloglar
+			by.Deger3 = c.Blogs.OrderByDescending(x => x.Id).Take(5).ToList(); // guncel bloglar
 			return View(by);
         }
 

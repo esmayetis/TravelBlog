@@ -43,15 +43,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 @foreach (var x in Model.Deger1)
                 {
                     <div class="single-grid">
-
                         <img src="@x.BlogImage" alt="" style="margin-bottom:20px" />
-                        <a href="/Blog/BlogDetay/@x.Id">@x.Baslik</a>
+                        <a href="/Blog/BlogDetay/@x.Id">
+                            <h4>@x.Baslik</h4>
+                        </a>
                         <p>
-                            @x.Aciklama
+                            @x.Aciklama.Substring(0, Math.Min(x.Aciklama.Length, 300))...
+                            <a href="/Blog/BlogDetay/@x.Id">devamını oku</a>
                         </p>
-
                     </div>
-
                     <br /> <br />
                 }
                 <br /> <br />
@@ -76,15 +76,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         <li><a href="#">Steve Roberts  </a> on <a href="#">HTML5/CSS3</a></li>
                     </ul>
                 </div>
-                <div class="categories">
-                    <h3>Kategoriler</h3>
-                    <ul>
-                        <li><a href="#">Vivamus vestibulum nulla</a></li>
-                        <li><a href="#">Integer vitae libero ac risus e</a></li>
-                        <li><a href="#">Vestibulum commo</a></li>
-                        <li><a href="#">Cras iaculis ultricies</a></li>
-                    </ul>
-                </div>
+                
                 <div class="clearfix"></div>
             </div>
             <div class="clearfix"></div>
