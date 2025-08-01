@@ -4,8 +4,11 @@
     ViewBag.Title = "YorumlarListesi";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
+<br/>
 
 <h2>Yorum Listesi</h2>
+
+<br/>
 
 <table class="table table-bordered">
     <tr>
@@ -26,8 +29,8 @@
             <td>@x.Mail</td>
             <td>@x.Yorum</td>
             <td>@x.Blog.Baslik</td>
-            <td><a href="#" class="btn btn-danger">Sil</a></td>
-            <td><a href="#" class="btn btn-warning">Güncelle</a></td>
+            <td><a href="/Admin/YorumSil/@x.Id" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Admin/YorumGetir/@x.Id" class="btn btn-warning">Güncelle</a></td>
         </tr>
     }
 

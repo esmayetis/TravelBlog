@@ -5,6 +5,21 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
+@if (Session["KullaniciAdi"] != null)
+{
+    <div id="hosgeldinMesaji" style="
+        background-color: #e6ffe6;
+        border: 1px solid #33cc33;
+        color: #006600;
+        padding: 12px;
+        margin-bottom: 15px;
+        border-radius: 6px;
+        text-align: center;
+        font-weight: bold;">
+        ✅ Hoş geldin, admin!
+    </div>
+}
+
 <h2>Blog Listesi</h2>
 <br />
 <table class="table table-bordered">
@@ -13,7 +28,7 @@
         <th>BAŞLIK</th>
         <th>SİL</th>
         <th>GÜNCELLE</th>
-        <th> BLOG DETAYLARI</th>
+        <th>BLOG DETAYLARI</th>
     </tr>
     @foreach (var x in Model)
     {
@@ -21,14 +36,25 @@
             <td>@x.Id</td>
             <td>@x.Baslik</td>
             <td><a href="/Admin/BlogSil/@x.Id" class="btn btn-danger">Sil</a></td>
-            <td><a href="/admin/BlogGetir/@x.Id" class="btn btn-warning">Güncelle</a></td>
+            <td><a href="/Admin/BlogGetir/@x.Id" class="btn btn-warning">Güncelle</a></td>
             <td>
                 <a href="#" class="btn" style="background-color: #cfcfcf; color: black;">Detaylar</a>
-                </td>
-
-</tr>
+            </td>
+        </tr>
     }
 </table>
 
 <a href="/Admin/YeniBlog/" class="btn btn-primary">Yeni Blog</a>
 
+<script>
+    setTimeout(function () {
+        var mesaj = document.getElementById("hosgeldinMesaji");
+        if (mesaj) {
+            mesaj.style.transition = "opacity 1.5s ease-out";
+            mesaj.style.opacity = "0";
+            setTimeout(function () {
+                mesaj.remove(); // tamamen DOM'dan kaldır
+            }, 1500);
+        }
+    }, 3000); // 3 saniye sonra başlasın
+</script>
