@@ -131,15 +131,25 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
+    <Compile Include="Controllers\EtkinlikController.cs" />
     <Compile Include="Controllers\GirisYapController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IletisimController.cs" />
+    <Compile Include="Controllers\OtelController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Migrations\202508012101030_AddBaslikToHakkimizda.cs" />
     <Compile Include="Migrations\202508012101030_AddBaslikToHakkimizda.Designer.cs">
       <DependentUpon>202508012101030_AddBaslikToHakkimizda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202508021933585_AddOtelTable.cs" />
+    <Compile Include="Migrations\202508021933585_AddOtelTable.Designer.cs">
+      <DependentUpon>202508021933585_AddOtelTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202508022020532_AddEtkinlikTable.cs" />
+    <Compile Include="Migrations\202508022020532_AddEtkinlikTable.Designer.cs">
+      <DependentUpon>202508022020532_AddEtkinlikTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Siniflar\Admin.cs" />
@@ -148,8 +158,10 @@
     <Compile Include="Models\Siniflar\Blog.cs" />
     <Compile Include="Models\Siniflar\BlogYorum.cs" />
     <Compile Include="Models\Siniflar\Context.cs" />
+    <Compile Include="Models\Siniflar\Etkinlik.cs" />
     <Compile Include="Models\Siniflar\Hakkimizda.cs" />
     <Compile Include="Models\Siniflar\iletisim.cs" />
+    <Compile Include="Models\Siniflar\Otel.cs" />
     <Compile Include="Models\Siniflar\Yorumlar.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -232,6 +244,7 @@
     <Content Include="web\images\key.png" />
     <Content Include="web\images\link1-bg.gif" />
     <Content Include="web\images\logo.png" />
+    <Content Include="web\images\logo3.png" />
     <Content Include="web\images\pic.jpg" />
     <Content Include="web\images\pic1.jpg" />
     <Content Include="web\images\pic10.jpg" />
@@ -243,6 +256,7 @@
     <Content Include="web\images\pic7.jpg" />
     <Content Include="web\images\pic8.jpg" />
     <Content Include="web\images\pic9.jpg" />
+    <Content Include="web\images\pusula.jpg" />
     <Content Include="web\index.html" />
     <Content Include="web\js\jquery.min.js" />
     <Content Include="web\js\responsiveslides.min.js" />
@@ -294,6 +308,9 @@
     <Content Include="weblogin\fonts\Audiowide-Regular.ttf" />
     <Content Include="Views\GirisYap\Login.cshtml" />
     <Content Include="Views\Iletisim\Index.cshtml" />
+    <Content Include="Views\Blog\_YorumListesi.cshtml" />
+    <Content Include="Views\Otel\Index.cshtml" />
+    <Content Include="Views\Etkinlik\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -328,6 +345,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202508012101030_AddBaslikToHakkimizda.resx">
       <DependentUpon>202508012101030_AddBaslikToHakkimizda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202508021933585_AddOtelTable.resx">
+      <DependentUpon>202508021933585_AddOtelTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202508022020532_AddEtkinlikTable.resx">
+      <DependentUpon>202508022020532_AddEtkinlikTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

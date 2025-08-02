@@ -32,7 +32,7 @@ namespace TravelTripProje.Controllers
 
             by.Deger2 = c.Yorumlars.Where(x => x.BlogId == id).ToList();
 
-			by.Deger3 = c.Blogs.OrderByDescending(x => x.Id).Take(3).ToList(); // güncel bloglar
+			by.Deger3 = c.Blogs.OrderByDescending(x => x.Id).Take(5).ToList(); // güncel bloglar
 
 			return View(by);
 		}
@@ -45,10 +45,11 @@ namespace TravelTripProje.Controllers
 		}
 
 		[HttpPost]
-		public PartialViewResult YorumYap(Yorumlar y)
-        {
-			c.Yorumlars.Add(y);
+		public PartialViewResult YorumYap(Yorumlar p)
+		{
+			c.Yorumlars.Add(p);
 			c.SaveChanges();
+			
 			return PartialView();
 		}
 	}

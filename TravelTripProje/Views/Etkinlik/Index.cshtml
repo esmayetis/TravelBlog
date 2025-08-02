@@ -1,0 +1,110 @@
+﻿@model List<TravelTripProje.Models.Siniflar.Etkinlik>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+<br />
+<h2 style="margin-left: 450px; color: #800000;">Etkinlikler</h2>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" />
+
+<style>
+    .etkinlik-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 50px;
+    }
+
+    .etkinlik-card {
+        display: flex;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        margin-bottom: 25px;
+        width: 1000px;
+        max-width: 90%;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+        transition: transform 0.2s ease;
+    }
+
+        .etkinlik-card:hover {
+            transform: scale(1.01);
+        }
+
+    .etkinlik-image img {
+        width: 300px;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .etkinlik-info {
+        flex: 1;
+        padding: 20px 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+        .etkinlik-info h3 {
+            font-size: 22px;
+            color: #8B0000;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .etkinlik-info .tarih {
+            font-size: 14px;
+            color: #777;
+            margin-bottom: 10px;
+        }
+
+        .etkinlik-info .lokasyon {
+            font-size: 15px;
+            color: #555;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        .etkinlik-info p {
+            font-size: 16px;
+            color: #333;
+            line-height: 1.5;
+        }
+        .etkinlik-info i {
+            color: #8B0000;
+            margin-right: 5px;
+        }
+
+    .tarih, .lokasyon {
+        font-size: 14px;
+        color: #555;
+        margin-bottom: 8px;
+        display: flex;
+        align-items: center;
+    }
+
+</style>
+
+<div class="etkinlik-container">
+    @foreach (var e in Model)
+    {
+        <div class="etkinlik-card">
+            <div class="etkinlik-image">
+                <img src="@e.FotoUrl" alt="Etkinlik Görseli" />
+            </div>
+            <div class="etkinlik-info">
+                <h3>@e.Baslik</h3>
+                <div class="tarih">
+                    <i class="fa-solid fa-calendar-days"></i> @e.Tarih.ToString("dd MMMM yyyy")
+                </div>
+                <div class="lokasyon">
+                    <i class="fa-solid fa-location-dot"></i> @e.Lokasyon
+                </div>
+                <p>@e.Aciklama</p>
+            </div>
+        </div>
+    }
+</div>
