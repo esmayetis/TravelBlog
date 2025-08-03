@@ -32,5 +32,5 @@
 
 ## 🧩 Entity Relationship (ER) Diagram
 
-![ER Diagram](docs/er_diagram.png)
+![ER Diagram](TravelTripProje/docs/er_diagram.png)
 
