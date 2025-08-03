@@ -55,4 +55,7 @@ git clone https://github.com/kullaniciadiniz/TravelTripProje.git
        providerName="System.Data.SqlClient" />
 </connectionStrings>
 
+## 🧩 Entity Relationship (ER) Diagram
+
+![ER Diagram](docs/er_diagram.png)
 
