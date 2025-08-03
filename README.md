@@ -29,31 +29,6 @@
 
 ---
 
-## 🛠️ Kurulum Talimatları
-
-### 1. Repoyu Klonlayın
-
-```bash
-git clone https://github.com/kullaniciadiniz/TravelTripProje.git
-
-##  2. Visual Studio ile Açın
-
-- `TravelTripProje.sln` dosyasını **Visual Studio** ile açın.  
-- Gerekirse NuGet bağımlılıklarını yükleyin:  
-  `Tools > NuGet Package Manager > Manage NuGet Packages for Solution`
-
----
-
-##  3. Veritabanı Ayarları
-
-`Web.config` dosyasında aşağıdaki `<connectionStrings>` bölümünü kendi SQL Server bilgisayar adınıza göre güncelleyin:
-
-```xml
-<connectionStrings>
-  <add name="Context" 
-       connectionString="Data Source=.; Initial Catalog=TravelDb; Integrated Security=True" 
-       providerName="System.Data.SqlClient" />
-</connectionStrings>
 
 ## 🧩 Entity Relationship (ER) Diagram
 
