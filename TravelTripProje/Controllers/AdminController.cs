@@ -89,5 +89,54 @@ namespace TravelTripProje.Controllers
 			c.SaveChanges();
 			return RedirectToAction("YorumlarListesi");
 		}
+
+		public ActionResult HakkimizdaListesi()
+		{
+			var degerler = c.Hakkimizdas.ToList();
+			return View(degerler);
+		}
+
+		public ActionResult HakkimizdaGetir(int id)
+		{
+			var bilgi = c.Hakkimizdas.Find(id);
+			return View("HakkimizdaGetir", bilgi);
+		}
+
+		[HttpPost]
+		public ActionResult HakkimizdaGuncelle(Hakkimizda h)
+		{
+			var bilgi = c.Hakkimizdas.Find(h.Id);
+			bilgi.Baslik = h.Baslik;
+			bilgi.Aciklama = h.Aciklama;
+			bilgi.FotoUrl = h.FotoUrl;
+			c.SaveChanges();
+			return RedirectToAction("HakkimizdaListesi");
+		}
+
+		public ActionResult IletisimListesi()
+		{
+			var iletiler = c.iletisims.ToList();
+			return View(iletiler);
+		}
+
+		public ActionResult IletisimGetir(int id)
+		{
+			var veri = c.iletisims.Find(id);
+			return View("IletisimGetir", veri);
+		}
+
+		[HttpPost]
+		public ActionResult IletisimGuncelle(iletisim i)
+		{
+			var veri = c.iletisims.Find(i.Id);
+			veri.AdSoyad = i.AdSoyad;
+			veri.Mail = i.Mail;
+			veri.Konu = i.Konu;
+			veri.Mesaj = i.Mesaj;
+			c.SaveChanges();
+			return RedirectToAction("IletisimListesi");
+		}
+
+
 	}
 }

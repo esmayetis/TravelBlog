@@ -1,0 +1,38 @@
+﻿@model TravelTripProje.Models.Siniflar.iletisim
+
+@{
+    ViewBag.Title = "İletişim Güncelle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+
+<h2>İletişim Güncelle</h2>
+<br />
+
+@using (Html.BeginForm("IletisimGuncelle", "Admin", FormMethod.Post))
+{
+    @Html.HiddenFor(x => x.Id)
+
+    <div class="form-group">
+        @Html.Label("Ad Soyad")
+        @Html.TextBoxFor(x => x.AdSoyad, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.Label("Mail")
+        @Html.TextBoxFor(x => x.Mail, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.Label("Konu")
+        @Html.TextBoxFor(x => x.Konu, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.Label("Mesaj")
+        @Html.TextAreaFor(x => x.Mesaj, new { @class = "form-control", rows = 5 })
+    </div>
+
+    <button class="btn btn-success">Kaydet</button>
+}
